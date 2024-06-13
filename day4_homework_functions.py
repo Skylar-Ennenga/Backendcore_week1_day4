@@ -78,15 +78,15 @@ shopping_list = []
 
 def add_item(shopping_list):
     item = input("What would you like to add to your shopping list? ")
-    shopping_list.append(item)
+    shopping_list.append(item) # Adds the input item to the end of the list
     print(shopping_list)
 
 def remove_item(shopping_list):
     item = input("Which item would you like to remove? ")
-    if item in shopping_list:
+    if item in shopping_list: # Checks to see if the specified item is in the list removes it if it is.
         shopping_list.remove(item)
     else:
-        print(f"{item} is not in your shopping list...")
+        print(f"{item} is not in your shopping list...") # If its not in the list let them know its not. 
     print(shopping_list)
 
 def main(shopping_list):
@@ -100,14 +100,14 @@ def main(shopping_list):
         response = input("What would you like to do? ")
         # conditionals to check the user response and call the necessary functions
         if response == "1":
-            add_item(shopping_list)
+            add_item(shopping_list) #Add item call
         elif response == "2":
-            remove_item(shopping_list)
+            remove_item(shopping_list) #remove item call
         elif response == "3":
-            clean_shopping_list = ", ".join(shopping_list)
+            clean_shopping_list = ", ".join(shopping_list) # Cleans the format of the data a little before display this final product.
             print(f"You will need to get {clean_shopping_list}.")
             break
         else: 
             print("Please choose a valid option 1, 2, or 3")
 
-main(shopping_list)
+main(shopping_list) # Calling using the empty shopping list above.
